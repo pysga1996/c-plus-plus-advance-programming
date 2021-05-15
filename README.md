@@ -1,2 +1,2 @@
-# c-plus-plus-advance-programming
-C++ Advance Programming
+# c-plus-plus-advanced-programming
+C++ Advanced Programming
