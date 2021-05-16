@@ -14,3 +14,9 @@ add_executable(bit-manipulation ${BIT_MANIPULATION_SOURCES})
 
 file(GLOB_RECURSE STRUCT_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "struct/*.cpp")
 add_executable(struct ${STRUCT_SOURCES})
+
+file(GLOB_RECURSE TEMPLATE_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "template/*.cpp")
+add_executable(template ${TEMPLATE_SOURCES})
+
+file(GLOB_RECURSE LAMBDA_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "lambda/*.cpp")
+add_executable(lambda ${LAMBDA_SOURCES})

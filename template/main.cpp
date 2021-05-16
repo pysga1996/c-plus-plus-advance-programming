@@ -22,6 +22,21 @@ int main() {
 //        case 5:
 //            ex5();
 //            break;
+//        case 6:
+//            ex6();
+//            break;
+//        case 7:
+//            ex7();
+//            break;
+//        case 9:
+//            ex9();
+//            break;
+//        case 10:
+//            ex10();
+//            break;
+//        case 11:
+//            ex11();
+//            break;
         default:
             cout << "Exit" << endl;
     }
