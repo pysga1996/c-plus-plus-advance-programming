@@ -10,9 +10,9 @@ int main() {
         case 1:
             ex1();
             break;
-//        case 2:
-//            ex2();
-//            break;
+        case 2:
+            ex2();
+            break;
 //        case 3:
 //            ex3();
 //            break;
