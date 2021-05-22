@@ -1,24 +1,27 @@
 #ifndef ADVANCE_MAIN_H
 #define ADVANCE_MAIN_H
 
-void ex1();
+namespace array_exercise {
 
-void ex2();
+    void ex1();
 
-void ex3();
+    void ex2();
 
-void ex4();
+    void ex3();
 
-void ex5();
+    void ex4();
 
-void ex6();
+    void ex5();
 
-void ex7();
+    void ex6();
 
-void ex9();
+    void ex7();
 
-void ex10();
+    void ex9();
 
-void ex11();
+    void ex10();
+
+    void ex11();
+}
 
 #endif //ADVANCE_MAIN_H

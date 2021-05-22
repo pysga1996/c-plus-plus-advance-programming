@@ -7,6 +7,7 @@ int main() {
     cout << "Select an exercise:" << endl;
     cin >> cmd;
     switch (cmd) {
+        using namespace array_exercise;
         case 1:
             ex1();
             break;

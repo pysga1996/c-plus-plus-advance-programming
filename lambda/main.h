@@ -1,6 +1,9 @@
 #ifndef ADVANCED_MAIN_H
 #define ADVANCED_MAIN_H
 
-void ex1();
+namespace lambda_exercise {
+
+    void ex1();
+}
 
 #endif //ADVANCED_MAIN_H
