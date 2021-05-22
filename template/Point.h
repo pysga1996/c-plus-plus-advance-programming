@@ -3,8 +3,6 @@
 
 #include <iostream>
 
-using namespace std;
-
 template<typename TypeOne = int, typename TypeTwo = int>
 class Point {
 private:
@@ -18,6 +16,7 @@ public:
     Point() = default;
 
     void printPoint() {
+        using namespace std;
         cout << "x: " << this->x << ",";
         cout << "y: " << this->y << endl;
     };
