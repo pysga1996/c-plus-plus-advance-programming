@@ -1,22 +1,31 @@
 cmake_minimum_required(VERSION 3.16)
-project(advanced)
+project(cpp-advanced-programming)
 
 set(CMAKE_CXX_STANDARD 20)
 
-file(GLOB_RECURSE POINTER_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "pointer/*.cpp")
-add_executable(pointer ${POINTER_SOURCES})
+#Add the google test subdirectory
+add_subdirectory(lib/googletest)
 
-file(GLOB_RECURSE ARRAY_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "array/*.cpp")
-add_executable(array ${ARRAY_SOURCES})
+#include googletest/include dir
+include_directories(lib/googletest/googletest/include)
 
-file(GLOB_RECURSE BIT_MANIPULATION_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "bit-manipulation/*.cpp")
-add_executable(bit-manipulation ${BIT_MANIPULATION_SOURCES})
+#include the googlemock/include dir
+include_directories(lib/googletest/googlemock/include)
 
-file(GLOB_RECURSE STRUCT_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "struct/*.cpp")
-add_executable(struct ${STRUCT_SOURCES})
+include_directories(lib lib/cpp-commons/common-collection lib/cpp-commons/common-matrix lib/cpp-commons/common-number lib/cpp-commons/common-string lib/cpp-commons/common-util)
 
-file(GLOB_RECURSE TEMPLATE_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "template/*.cpp")
-add_executable(template ${TEMPLATE_SOURCES})
+link_directories(lib)
 
-file(GLOB_RECURSE LAMBDA_SOURCES RELATIVE ${CMAKE_SOURCE_DIR} "lambda/*.cpp")
-add_executable(lambda ${LAMBDA_SOURCES})
+file(GLOB_RECURSE CPP_ADVANCED_PROGRAMMING_SOURCE RELATIVE ${CMAKE_SOURCE_DIR} src/*.cpp src/*/*.cpp)
+add_executable(cpp-advanced-programming ${CPP_ADVANCED_PROGRAMMING_SOURCE})
+
+target_link_libraries(cpp-advanced-programming LINK_PUBLIC cpp-commons)
+
+file(GLOB_RECURSE CPP_ADVANCED_PROGRAMMING_TEST RELATIVE ${CMAKE_SOURCE_DIR} src/*/*.cpp test/*.cpp test/*/*.cpp lib/*.h lib/*/*.h lib/*/*/*.h)
+add_executable(cpp-advanced-programming-test ${CPP_ADVANCED_PROGRAMMING_TEST})
+
+#Link with GoogleTest
+target_link_libraries(cpp-advanced-programming-test gtest gtest_main cpp-commons)
+
+#Link with GoogleMock
+target_link_libraries(cpp-advanced-programming-test gmock gmock_main cpp-commons)
